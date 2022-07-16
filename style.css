@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "Rubik", sans-serif;
+}
+
+.header {
+	height: 30vh;
+	background-image: url("./images/pattern-bg.png");
+	background-size: cover;
+	padding-top: 3em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 2em;
+}
+
+.title {
+	font-size: 3rem;
+	color: #fff;
+	letter-spacing: 1px;
+}
+
+.form {
+	width: 100%;
+	text-align: center;
+}
+
+.search {
+	width: 30%;
+	padding: 1em;
+	border: none;
+	border-radius: 10px;
+	outline: none;
+}
+
+.submit {
+	margin-left: 1em;
+	padding: 1em;
+	border: 0;
+	border-radius: 10px;
+	outline: none;
+	color: #fff;
+	background-color: hsl(0, 0%, 17%);
+	cursor: pointer;
+	transition: all 150ms ease;
+}
+
+.submit:hover {
+	transition: all 150ms ease-in;
+	color: hsl(0, 0%, 17%);
+	background-color: #fff;
+}
+
+.error {
+	padding: 0.5em;
+	color: hsl(0, 100%, 40%);
+}
+
+.container {
+	height: 15vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 23vh;
+}
+
+.content {
+	width: max-content;
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 5em;
+	padding: 3em;
+	border-radius: 10px;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+	z-index: 10;
+}
+
+.sub-heading {
+	font-size: 1rem;
+	font-weight: 400;
+	color: hsl(0, 0%, 58%);
+	margin-bottom: -0.2em;
+}
+
+.heading {
+	font-size: 2rem;
+	font-weight: 500;
+	color: hsl(0, 0%, 17%);
+}
+
+.hidden {
+	display: none;
+}
+
+#mapid {
+	height: 70vh;
+	z-index: 0;
+}

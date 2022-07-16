@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IP Address Tracker</title>
+		<link
+			rel="stylesheet"
+			href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+			integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+			crossorigin=""
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.16/angular.min.js"></script>
+		<script
+			src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+			integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+			crossorigin=""
+		></script>
+		<script src="app.js" defer></script>
+	</head>
+	<body>
+		<header class="header" ng-app>
+			<h1 class="title">IP Address Tracker</h1>
+			<form class="form" name="query" novalidate>
+				<input
+					type="text"
+					placeholder="Search for any IP address or domain"
+					name="search"
+					ng-model="search"
+					ng-init="search='43.250.156.105'"
+					ng-pattern="/^((25[0-5]|(2[0-4]|1[0-9]|[1-9]|)[0-9])(\.(?!$)|$)){4}$/"
+					ng-required="true"
+					class="search"
+				/>
+				<button class="submit">Search</button>
+				<p class="error">
+					<span ng-show="query.search.$touched && query.search.$error.required"
+						>This field is required</span
+					><span ng-show="query.search.$error.pattern">Enter valid IP address</span>
+				</p>
+			</form>
+		</header>
+		<main>
+			<div class="error hidden"><h1>Failed to load resources</h1></div>
+			<div class="container">
+				<div class="content">
+					<div>
+						<h2 class="sub-heading">IP Address</h2>
+						<p class="heading">43.250.156.105</p>
+					</div>
+					<div>
+						<h2 class="sub-heading">Location</h2>
+						<p class="heading">State of Gujarāt, Rājkot</p>
+					</div>
+					<div>
+						<h2 class="sub-heading">Timezone</h2>
+						<p class="heading">UTC+05:30</p>
+					</div>
+					<div>
+						<h2 class="sub-heading">ISP</h2>
+						<p class="heading">Gujarat Telelink Pvt Ltd</p>
+					</div>
+				</div>
+			</div>
+			<div id="mapid"></div>
+		</main>
+	</body>
+</html>
